@@ -1,0 +1,249 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"><title>Linux | 超级无敌大帅哥周辰</title><meta name="author" content="周辰"><meta name="copyright" content="周辰"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="初识Linux -先附一张美丽的合照    操作系统概述 初识Linux 虚拟机介绍 VMware WorkStation安装 在VMware上安装Linux 远程连接Linux系统 拓展: WSL(Windows Subsystem for Linux) 拓展：虚拟机快照    操作系统概述操作系统是计算机软件的一种，它主要负责：作为用户和计算机硬件之间的桥梁，调度和管理计算机硬件进行工作。 初">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux">
+<meta property="og:url" content="http://example.com/2023/03/07/Linux/index.html">
+<meta property="og:site_name" content="超级无敌大帅哥周辰">
+<meta property="og:description" content="初识Linux -先附一张美丽的合照    操作系统概述 初识Linux 虚拟机介绍 VMware WorkStation安装 在VMware上安装Linux 远程连接Linux系统 拓展: WSL(Windows Subsystem for Linux) 拓展：虚拟机快照    操作系统概述操作系统是计算机软件的一种，它主要负责：作为用户和计算机硬件之间的桥梁，调度和管理计算机硬件进行工作。 初">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/img/boy.png">
+<meta property="article:published_time" content="2023-03-07T02:30:58.000Z">
+<meta property="article:modified_time" content="2023-03-13T12:18:14.986Z">
+<meta property="article:author" content="周辰">
+<meta property="article:tag" content="Linux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/img/boy.png"><link rel="shortcut icon" href="/img/love.png"><link rel="canonical" href="http://example.com/2023/03/07/Linux/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script async="async" src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script><script>(adsbygoogle = window.adsbygoogle || []).push({
+  google_ad_client: '',
+  enable_page_level_ads: 'true'
+});</script><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: false,
+  }
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'Linux',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2023-03-13 20:18:14'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+    win.getCSS = (url,id = false) => new Promise((resolve, reject) => {
+      const link = document.createElement('link')
+      link.rel = 'stylesheet'
+      link.href = url
+      if (id) link.id = id
+      link.onerror = reject
+      link.onload = link.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        link.onload = link.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(link)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><link rel="stylesheet" href="/css/style.css"><meta name="generator" content="Hexo 6.3.0"></head><body><div id="loading-box" onclick="document.getElementById(&quot;loading-box&quot;).classList.add(&quot;loaded&quot;)"><div class="loading-bg"><div class="loading-img"></div><div class="loading-image-dot"></div></div></div><script>const preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> { preloader.endLoading() })
+
+if (false) {
+  document.addEventListener('pjax:send', () => { preloader.initLoading() })
+  document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+}</script><link rel="stylesheet" href="/css/progress_bar.css"/><script src="https://cdn.jsdelivr.net/npm/pace-js/pace.min.js"></script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/boy.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header"><nav id="nav"><span id="blog-info"><a href="/" title="超级无敌大帅哥周辰"><img class="site-icon" src="/img/jtz.png"/><span class="site-name">超级无敌大帅哥周辰</span></a></span><div id="menus"></div><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fa fa-heartbeat"></i><span> 清单</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page child" href="/Gallery/"><i class="fa-fw fas fa-images"></i><span> 照片</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> 电影</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="nav-right"></div></nav><div id="post-info"><h1 class="post-title">Linux</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2023-03-07T02:30:58.000Z" title="发表于 2023-03-07 10:30:58">2023-03-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2023-03-13T12:18:14.986Z" title="更新于 2023-03-13 20:18:14">2023-03-13</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="Linux"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="初识Linux"><a href="#初识Linux" class="headerlink" title="初识Linux"></a>初识Linux</h1><hr>
+<p>-<strong>先附一张美丽的合照</strong></p>
+<p><img src="/.com//Users\user\Pictures\xiannvrou.png" alt="仙女柔"><br><image src="xiannvrou.png"></image></p>
+<blockquote>
+<ul>
+<li>操作系统概述</li>
+<li>初识Linux</li>
+<li>虚拟机介绍</li>
+<li>VMware WorkStation安装</li>
+<li>在VMware上安装Linux</li>
+<li>远程连接Linux系统</li>
+<li>拓展: WSL(Windows Subsystem for Linux)</li>
+<li>拓展：虚拟机快照</li>
+</ul>
+</blockquote>
+<hr>
+<h2 id="操作系统概述"><a href="#操作系统概述" class="headerlink" title="操作系统概述"></a>操作系统概述</h2><p>操作系统是计算机软件的一种，它主要负责：作为用户和计算机硬件之间的桥梁，调度和管理计算机硬件进行工作。</p>
+<h2 id="初识Linux-1"><a href="#初识Linux-1" class="headerlink" title="初识Linux"></a>初识Linux</h2><h3 id="1-了解Linux系统的诞生"><a href="#1-了解Linux系统的诞生" class="headerlink" title="1.了解Linux系统的诞生"></a>1.了解Linux系统的诞生</h3><p>Linux创始人: <strong>林纳斯 托瓦兹</strong><br>Linux 诞生于1991年，作者上大学期间因为创始人在上大学期间经常需要浏览新闻和处理邮件，发现现有的操作系统不好用,于是他决心自己写一个保护模式下的操作系统，这就是Linux的原型，当时他21岁，后来经过全世界网友的支持,现在能够兼容多种硬件，成为最为流行的服务器操作系统之一。</p>
+<h3 id="2-了解什么是Linux内核"><a href="#2-了解什么是Linux内核" class="headerlink" title="2.了解什么是Linux内核"></a>2.了解什么是Linux内核</h3><p>Linux系统的组成如下：<br>Linux系统内核、系统级应用程序两部分组成。</p>
+<ul>
+<li>内核提供系统最核心的功能，如：调度CPU、调度内存、调度文件系统、调度网络通讯、调度IO等。</li>
+<li>系统级应用程序，可以理解为出厂自带程序，可供用户快速上手操作系统，如：文件管理器、任务管理器、图片查看、音乐播放等。</li>
+<li>比如，播放音乐，无论用户使用自带音乐播放器或是自行安装的第三方播放器均是由播放器程序，调用内核提供的相关功能，由内核调度CPU解码、音响发声等。</li>
+</ul>
+<h3 id="3-了解常见的Linux发行版"><a href="#3-了解常见的Linux发行版" class="headerlink" title="3.了解常见的Linux发行版"></a>3.了解常见的Linux发行版</h3><p>内核是免费、开源的，这也就代表了：<br>任何人都可以获得并修改内核，并且自行集成系统级程序提供了内核+系统级程序的完整封装，称之为Linux发行版</p>
+<h3 id="4-虚拟机介绍"><a href="#4-虚拟机介绍" class="headerlink" title="4.虚拟机介绍"></a>4.虚拟机介绍</h3><p>我需要借助虚拟机来获得可用的Linux系统环境进行学习。<br>我们不能给自己电脑重装系统为Linux，所以通过虚拟机的形式，得到可以用的Linux系统环境，供后续学习使用。</p>
+<h3 id="5-VMware-WorkStation安装"><a href="#5-VMware-WorkStation安装" class="headerlink" title="5.VMware WorkStation安装"></a>5.VMware WorkStation安装</h3><p>下载地址： <a target="_blank" rel="noopener" href="https://www.vmware.com/cn/products/workstation-pro.html">https://www.vmware.com/cn/products/workstation-pro.html</a><br>软件安装完成后，验证一下网络适配器是否正常配置。</p>
+<h3 id="6-在VMware上安装Linux"><a href="#6-在VMware上安装Linux" class="headerlink" title="6.在VMware上安装Linux"></a>6.在VMware上安装Linux</h3><p>首先，我们需要下载操作系统的安装文件，本次使用CentOS7.6版本进行学习：<br><a target="_blank" rel="noopener" href="https://vault.centos.org/7.6.1810/isos/x86_64/">https://vault.centos.org/7.6.1810/isos/x86_64/</a>(最后的&#x2F;不要漏掉）</p>
+<h3 id="7-远程连接Linux系统"><a href="#7-远程连接Linux系统" class="headerlink" title="7.远程连接Linux系统"></a>7.远程连接Linux系统</h3><h4 id="FinalShell"><a href="#FinalShell" class="headerlink" title="FinalShell"></a>FinalShell</h4><p>由于操作不便，所以选用FinalShell，<strong>远程</strong>连接到Linux操作系统之上。<br>FinalShell的下载地址为：<br><strong>Windows</strong>:<br><a target="_blank" rel="noopener" href="http://www.hostbuf.com/downloads/finalshell_install.exe">http://www.hostbuf.com/downloads/finalshell_install.exe</a><br><strong>Mac</strong>:<br><a target="_blank" rel="noopener" href="http://www.hostbuf.com/downloads/finalshell_install.pkg">http://www.hostbuf.com/downloads/finalshell_install.pkg</a><br>下载完成后双击打开安装。<br>1.首先，先查询到Linux系统的IP地址:<br>在虚拟机的命令行中输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ ifconfig</span><br></pre></td></tr></table></figure>
+<p>然后打开Finshell软件，配置到Linux系统的连接：点击左上角添加<strong>SSh链接</strong>，填写IP地址，输入用户名，密码等；双击刚刚配置好的链接；点击接受并保存</p>
+<p>另外可以通过在FinShell和VMware命令行输入</p>
+<figure class="highlight plaintext"><table><tr><td class="code"><pre><span class="line">$ ls</span><br></pre></td></tr></table></figure>
+
+<p><em>注意：<br>Linux虚拟机如果重启，有可能，发生IP改变<br>如果改变IP需要在<em><strong>FinalShell</strong></em>中修改连接的IP地址<br>后面会讲解如何固定IP地址不发生改变</em></p>
+<h3 id="9-扩展：虚拟机快照"><a href="#9-扩展：虚拟机快照" class="headerlink" title="9.扩展：虚拟机快照"></a>9.扩展：虚拟机快照</h3><p>在学习阶段我们无法避免的可能损坏Linux操作系统。<br>如果损坏的话，重新安装一个Linux操作系统就会十分麻烦。</p>
+<p>VMware虚拟机（Workstation和Funsion）支持为虚拟机制作快照。<br>通过快照将当前虚拟机的状态保存下来，在以后可以通过快照恢复虚拟机到保存的状态。<br>操作：<br>1.虚拟机关机<br>2.右击虚拟机打开快照设置<br>3.点击拍摄快照<br>4.如果想回到快照位置直接点击<strong>转到</strong></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">周辰</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2023/03/07/Linux/">http://example.com/2023/03/07/Linux/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">超级无敌大帅哥周辰</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Linux/">Linux</a></div><div class="post_share"><div class="social-share" data-image="/img/boy.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2023/03/07/QJF/" title="全家福"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">全家福</div></div></a></div><div class="next-post pull-right"><a href="/2023/03/05/hello-world/" title="大帅哥Eason的初篇-Hexo的世界!"><div class="cover" style="background: var(--default-bg-color)"></div><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">大帅哥Eason的初篇-Hexo的世界!</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2023/03/14/Linux%E7%94%A8%E6%88%B7%E5%92%8C%E6%9D%83%E9%99%90/" title="Linux用户和权限"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-14</div><div class="title">Linux用户和权限</div></div></a></div><div><a href="/2023/03/13/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" title="Linux基础命令"><div class="cover" style="background: var(--default-bg-color)"></div><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2023-03-13</div><div class="title">Linux基础命令</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/boy.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">周辰</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">5</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">2</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">0</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/xxxxxx"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/lovingpotato" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="mailto:zhouchen2011@126.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%9D%E8%AF%86Linux"><span class="toc-number">1.</span> <span class="toc-text">初识Linux</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E6%A6%82%E8%BF%B0"><span class="toc-number">1.1.</span> <span class="toc-text">操作系统概述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E8%AF%86Linux-1"><span class="toc-number">1.2.</span> <span class="toc-text">初识Linux</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-%E4%BA%86%E8%A7%A3Linux%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%AF%9E%E7%94%9F"><span class="toc-number">1.2.1.</span> <span class="toc-text">1.了解Linux系统的诞生</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-%E4%BA%86%E8%A7%A3%E4%BB%80%E4%B9%88%E6%98%AFLinux%E5%86%85%E6%A0%B8"><span class="toc-number">1.2.2.</span> <span class="toc-text">2.了解什么是Linux内核</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#3-%E4%BA%86%E8%A7%A3%E5%B8%B8%E8%A7%81%E7%9A%84Linux%E5%8F%91%E8%A1%8C%E7%89%88"><span class="toc-number">1.2.3.</span> <span class="toc-text">3.了解常见的Linux发行版</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4-%E8%99%9A%E6%8B%9F%E6%9C%BA%E4%BB%8B%E7%BB%8D"><span class="toc-number">1.2.4.</span> <span class="toc-text">4.虚拟机介绍</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5-VMware-WorkStation%E5%AE%89%E8%A3%85"><span class="toc-number">1.2.5.</span> <span class="toc-text">5.VMware WorkStation安装</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#6-%E5%9C%A8VMware%E4%B8%8A%E5%AE%89%E8%A3%85Linux"><span class="toc-number">1.2.6.</span> <span class="toc-text">6.在VMware上安装Linux</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#7-%E8%BF%9C%E7%A8%8B%E8%BF%9E%E6%8E%A5Linux%E7%B3%BB%E7%BB%9F"><span class="toc-number">1.2.7.</span> <span class="toc-text">7.远程连接Linux系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#FinalShell"><span class="toc-number">1.2.7.1.</span> <span class="toc-text">FinalShell</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#9-%E6%89%A9%E5%B1%95%EF%BC%9A%E8%99%9A%E6%8B%9F%E6%9C%BA%E5%BF%AB%E7%85%A7"><span class="toc-number">1.2.8.</span> <span class="toc-text">9.扩展：虚拟机快照</span></a></li></ol></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/14/Linux%E7%94%A8%E6%88%B7%E5%92%8C%E6%9D%83%E9%99%90/" title="Linux用户和权限">Linux用户和权限</a><time datetime="2023-03-14T01:34:04.000Z" title="发表于 2023-03-14 09:34:04">2023-03-14</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/13/Linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4/" title="Linux基础命令">Linux基础命令</a><time datetime="2023-03-13T12:17:19.000Z" title="发表于 2023-03-13 20:17:19">2023-03-13</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/07/QJF/" title="全家福">全家福</a><time datetime="2023-03-07T04:11:29.000Z" title="发表于 2023-03-07 12:11:29">2023-03-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/07/Linux/" title="Linux">Linux</a><time datetime="2023-03-07T02:30:58.000Z" title="发表于 2023-03-07 10:30:58">2023-03-07</time></div></div><div class="aside-list-item no-cover"><div class="content"><a class="title" href="/2023/03/05/hello-world/" title="大帅哥Eason的初篇-Hexo的世界!">大帅哥Eason的初篇-Hexo的世界!</a><time datetime="2023-03-05T03:58:22.182Z" title="发表于 2023-03-05 11:58:22">2023-03-05</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2020 - 2023 By 周辰</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="chat_btn" type="button" title="聊天"><i class="fas fa-sms"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    const valine = new Valine(Object.assign({
+      el: '#vcomment',
+      appId: 'cOyX2sPd1zej1FZ8VX1cNWmL-MdYXbMMI',
+      appKey: 'GDfDoqP9LbWlA2ZmlZGxIrAT',
+      avatar: 'QVutZOMTA0Eidx1IlX8E7j08',
+      serverURLs: 'https://coyx2spd.api.lncldglobal.com',
+      emojiMaps: "",
+      path: window.location.pathname,
+      visitor: false
+    }, null))
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else getScript('https://cdn.jsdelivr.net/npm/valine/dist/Valine.min.js').then(initValine)
+}
+
+if ('Valine' === 'Valine' || !true) {
+  if (true) btf.loadComment(document.getElementById('vcomment'),loadValine)
+  else setTimeout(loadValine, 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script></div><script defer="defer" id="fluttering_ribbon" mobile="false" src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/canvas-fluttering-ribbon.min.js"></script><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/dist/activate-power-mode.min.js"></script><script>POWERMODE.colorful = true;
+POWERMODE.shake = true;
+POWERMODE.mobile = false;
+document.body.addEventListener('input', POWERMODE);
+</script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
